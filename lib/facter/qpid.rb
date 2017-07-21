@@ -1,6 +1,6 @@
 require 'facter'
 
-result = %x{/bin/rpm -qa |grep wget}
+result = %x{/bin/rpm -qa |grep qpid}
 
 Facter.add('qpid') do
     setcode do
