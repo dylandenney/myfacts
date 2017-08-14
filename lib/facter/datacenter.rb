@@ -1,11 +1,9 @@
 require 'facter'
 Facter.add(:datacenter) do
   setcode do
-    location = Facter.value(:hostname)[0..1]
+    location = Facter.value(:hostname)[1]
     case location
-    when 'g1' then datacenter = 'AtlantaMetro'
-    when 'g3','gl' then datacenter = 'SandySprings'
-    when 'v1' then datacenter = 'Richmond'
+    when '1' then datacenter = 'DataCenter1'
 #  (I was testing this in azure)  when 'pu' then datacenter = 'azurepup'
     else 'unknown'
     end

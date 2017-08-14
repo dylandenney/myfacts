@@ -1,11 +1,10 @@
 require 'facter'
 Facter.add(:shortdcname) do
   setcode do
-    location = Facter.value(:hostname)[0..1]
+    location = Facter.value(:hostname)[1]
     case location
-    when 'g1' then shortdcname = 'atl'
-    when 'g3','gl' then shortdcname = 'ss'
-    when 'v1' then shortdcname = 'ric'
+    when '1' then shortdcname = 'atl'
+    when '3','gl' then shortdcname = 'ss'
     else 'unknown'
     end
   end
